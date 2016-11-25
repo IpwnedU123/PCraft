@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,7 +68,11 @@ namespace MinecraftUSkinEditor
             if(treeView1.SelectedNode.Tag is PCK.MineFile)
             {
                 string appPath = Application.StartupPath;
-                File.WriteAllBytes(Path.Combine(appPath, ((PCK.MineFile)treeView1.SelectedNode.Tag).name), ((PCK.MineFile)treeView1.SelectedNode.Tag).data);
+                string extractPath = Path.Combine(appPath, ((PCK.MineFile)treeView1.SelectedNode.Tag).name);
+
+                if (!String.IsNullOrWhiteSpace(Path.GetDirectoryName(extractPath)))
+                    Directory.CreateDirectory(Path.GetDirectoryName(extractPath));
+                File.WriteAllBytes(extractPath, ((PCK.MineFile)treeView1.SelectedNode.Tag).data);
             }
         }
 
