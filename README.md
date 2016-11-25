@@ -1,5 +1,5 @@
 # PCraft
-WIP of giving jan1garner's minecraft for Wii U editor a Politically Correct name!
+A Politically Correct version of jam1garner's Minecraft for Wii U editor!
 
 Modify .PCK archives as you please!
 
