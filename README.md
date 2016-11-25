@@ -1,4 +1,4 @@
-# MineKamf
+# MineKampf
 A minecraft for Wii U editor
 
 Modify .PCK archives as you please!
