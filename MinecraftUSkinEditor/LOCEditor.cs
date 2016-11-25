@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,6 +71,14 @@ namespace MinecraftUSkinEditor
 
                 treeView1.Nodes.RemoveAt(index);
             }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            for(int i = 0; i < tbl.Rows.Count; i++)
+            {
+                currentLoc.langs[i].names[treeView1.SelectedNode.Index] = (string)tbl.Rows[i][1];
+            }             
         }
     }
 }
